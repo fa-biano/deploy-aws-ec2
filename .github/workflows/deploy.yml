@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Files Checkout
+    - name: Files Checkout
       uses: actions/checkout@v3
 
-      - name: Copy files with SSH
+    - name: Copy files with SSH
       uses: easingthemes/ssh-deploy@main
       env:
         SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
