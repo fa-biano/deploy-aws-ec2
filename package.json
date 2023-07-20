@@ -1,16 +1,15 @@
 {
-  "name": "aws-ecs-fargate-nodejs-app",
+  "name": "aws-ec2-nodejs-app",
   "version": "1.0.0",
-  "description": "Simple Node.js app runnning on AWS ECS Fargate",
+  "description": "Simple Node.js app runnning on AW2",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
   "keywords": [
-    "serverless",
-    "ecs",
-    "fargate"
+    "aws",
+    "ec2"
   ],
   "author": "Fabiano de Souza",
   "license": "ISC",
