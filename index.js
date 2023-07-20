@@ -5,7 +5,7 @@ const app = express();
 const port = 3000;
 
 const indexPage = `
-  <h3>Hello from a Node.js Application running on AWS ECS Fargate</h3>
+  <h3>Hello from a Node.js Application running on AWS EC2</h3>
   <p>What would you like to see?</p>
   <ul>
     <li>Random Dogs? <a href='/dogs'>Click here</a></li>
@@ -21,7 +21,7 @@ app.get('/healthcheck', (_req, res) => {
   }
 });
 
-app.get('/dogs', async (req, res) => {
+app.get('/dogs', async (_req, res) => {
   try {
     const response = await axios.get('https://dog.ceo/api/breeds/image/random');
     console.log(JSON.stringify(response.data));
