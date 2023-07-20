@@ -38,9 +38,11 @@ jobs:
           REMOTE_HOST: "ec2-18-234-62-185.compute-1.amazonaws.com"
           REMOTE_USER: "ec2-user"
           TARGET: "/home/ec2-user/node-app"
-          # EXCLUDE: "/dist/, /node_modules/, **.env, rebuild_app.sh, watcher.sh, .git"
+          EXCLUDE: "/dist/, /node_modules/, **.env, rebuild_app.sh, watcher.sh, .git"
           SCRIPT_AFTER: |
             ls
             sudo dnf install nodejs -y
             node -v
-            echo $RSYNC_STDOUT
+            cd node-app
+            npm ci
+            npm start
