@@ -6,23 +6,23 @@ on:
       - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  # build:
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v3
 
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.x'
+  #     - name: Install Node.js
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: '16.x'
           # cache: 'npm'
-      - run: npm ci
+      # - run: npm ci
 
   deploy:
     name: Deploy to EC2
-    needs: build
+    # needs: build
     runs-on: ubuntu-latest
 
     steps:
@@ -39,3 +39,8 @@ jobs:
           REMOTE_USER: "ec2-user"
           TARGET: "/home/ec2-user/node-app"
           # EXCLUDE: "/dist/, /node_modules/, **.env, rebuild_app.sh, watcher.sh, .git"
+          SCRIPT_AFTER: |
+            ls
+            sudo dnf install nodejs -y
+            node -v
+            echo $RSYNC_STDOUT
