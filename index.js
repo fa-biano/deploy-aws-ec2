@@ -1,5 +1,6 @@
 const express = require('express');
 const axios = require('axios');
+const { Dog } = require('./database/models');
 
 const app = express();
 const port = 3000;
@@ -11,7 +12,7 @@ const indexPage = `
     <li>Random Dogs? <a href='/dogs'>Click here</a></li>
   </ul>
 `
-
+app.use(express.json());
 app.get('/', (_req, res) => res.send(indexPage));
 app.get('/healthcheck', (_req, res) => {
   try {
@@ -38,8 +39,14 @@ app.get('/dogs', async (_req, res) => {
   }
 });
 
-app.get('/data', async(req, res) => {
-  
-})
+app.get('/data', async(_req, res) => {
+  try {
+    const dogs = await Dog.findAll();
+    return res.status(200).json(dogs);
+  } catch (error) {
+    console.log(error.message);
+    return res.status(500).json({ message: 'Ocorreu um erro' });
+  }
+});
 
 app.listen(port, () => console.log(`App listening on port ${port}!`));
