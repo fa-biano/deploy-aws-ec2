@@ -26,7 +26,6 @@ jobs:
           EXCLUDE: "/dist/, /node_modules/, **.env, rebuild_app.sh, watcher.sh, .git"
           SCRIPT_AFTER: |
             ls
-            sudo dnf install nodejs -y
             node -v
             cd node-app
             npm ci
