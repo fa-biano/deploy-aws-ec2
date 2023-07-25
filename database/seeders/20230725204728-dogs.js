@@ -8,11 +8,11 @@ module.exports = {
       [
         {
           name: 'Terrier Patterdale',
-          imgUrl: 'https://images.dog.ceo/breeds/terrier-patterdale/dog-1268559_640.jpg'
+          img_url: 'https://images.dog.ceo/breeds/terrier-patterdale/dog-1268559_640.jpg'
         },
         {
           name: 'Terrier Norfolk',
-          imgUrl: 'https://images.dog.ceo/breeds/terrier-norfolk/n02094114_1984.jpg'
+          img_url: 'https://images.dog.ceo/breeds/terrier-norfolk/n02094114_1984.jpg'
         },
       ], {});
   },

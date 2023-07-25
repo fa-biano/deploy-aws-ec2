@@ -36,6 +36,10 @@ app.get('/dogs', async (_req, res) => {
     res.status(500);
     res.send(error.message);
   }
+});
+
+app.get('/data', async(req, res) => {
+  
 })
 
 app.listen(port, () => console.log(`App listening on port ${port}!`));
