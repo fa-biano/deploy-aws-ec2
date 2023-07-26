@@ -22,11 +22,6 @@ jobs:
           SOURCE: "./"
           REMOTE_HOST: ${{ secrets.EC2_PUBLIC_DNS }}
           REMOTE_USER: "ec2-user"
-          MYSQL_HOST: ${{ secrets.MYSQL_HOST }}
-          MYSQL_PORT: ${{ secrets.MYSQL_PORT }}
-          MYSQL_DB_NAME: ${{ secrets.MYSQL_DB_NAME }}
-          MYSQL_USER: ${{ secrets.MYSQL_USER }}
-          MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
           TARGET: "/home/ec2-user/node-app"
           EXCLUDE: "/dist/, /node_modules/, **.env, rebuild_app.sh, watcher.sh, .git"
           SCRIPT_AFTER: |
@@ -34,4 +29,6 @@ jobs:
             node -v
             cd node-app
             npm ci
+            touch .env
+            echo "${{ secrets.AWS_RDS_MYSQL_CREDENTIALS }}" > .env
             npm start
