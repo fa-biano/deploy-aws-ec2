@@ -9,14 +9,15 @@ const indexPage = `
   <h3>Hello from a Node.js Application running on AWS EC2</h3>
   <p>What would you like to see?</p>
   <ul>
-    <li>Random Dogs? <a href='/dogs'>Click here</a></li>
+    <li>Random Dogs? (External API Call) <a href='/dogs'>Click here</a></li>
+    <li>List All Dogs on RDS Intance? <a href='/data'>Click here</a></li>
   </ul>
 `
 app.use(express.json());
 app.get('/', (_req, res) => res.send(indexPage));
 app.get('/healthcheck', (_req, res) => {
   try {
-    res.sendStatus(204);
+    res.sendStatus(200);
   } catch (error) {
     res.sendStatus(500);
   }

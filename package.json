@@ -1,7 +1,7 @@
 {
   "name": "aws-ec2-nodejs-app",
   "version": "1.0.0",
-  "description": "Simple Node.js app runnning on AW2",
+  "description": "Simple Node.js app runnning on AWS EC2",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
