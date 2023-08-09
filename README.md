@@ -24,4 +24,4 @@ O Backend está rodando na porta `3000`. Seguem as rotas que podem ser acessadas
 
 Para que esse projeto funcione é preciso primeiro criar os serviços `AWS EC2`, `AWS RDS` e configurar os secrets do repositório para processamento do CI/CD no Github Actions.
 
-Todo o passo a passo está explicado no artigo que publiquei no LinkedIn e que pode ser acessado através desse [Link](https://www.linkedin.com/in/fabiano-desouza/)! *(Publicação em Andamento...)*
+Todo o passo a passo está explicado no artigo que publiquei no LinkedIn e que pode ser acessado através desse [Link](https://www.linkedin.com/pulse/deploy-de-api-na-aws-com-cicd-fabiano-de-souza%3FtrackingId=N%252F661LRnRICbOo3jvGwDEg%253D%253D/?trackingId=N%2F661LRnRICbOo3jvGwDEg%3D%3D)!
